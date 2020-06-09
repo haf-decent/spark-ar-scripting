@@ -246,7 +246,7 @@ Hopefully this has been helpful in giving you more context on what scripting now
 | Async/Await     | Yes       | -1          | +1          |
 | **Hybrid**      | Yes       | +1          | 0           |
 
-The Hybrid approach is my pick, but feel free to choose which option works best for you. Feel free to download the example project and test out the different options.
+The Hybrid approach is my pick, but feel free to choose which option works best for you. Also feel free to download the example project and test out the different options for yourself.
 
 ### Shameless Self-Promotion
 If you found this helpful and want to learn more about Spark AR, I put together this [Udemy tutorial series](https://www.udemy.com/course/the-complete-spark-ar-course/?referralCode=2D981BA24888FD641825).
