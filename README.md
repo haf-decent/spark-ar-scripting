@@ -17,7 +17,7 @@ Synchronous code simply means code that runs in order, with each line "waiting" 
 // get a value and assign it to a variable;
 var myVariable = getValueSync();
 // WAIT for previous line to finish and then use myVariable
-myVariable.property = 2;
+myVariable.doSomething();
 ```
 
 
@@ -30,9 +30,9 @@ Asynchronous code is code that runs in order, but each line no longer has to wai
 // myVariable is assigned a Promise, not the object I want
 var myVariable = getValueAsyncPromise();
 // this line will throw an error, because it doesn't wait for myVariable to resolve
-myVariable.property = 2;
+myVariable.doSomething();
 
-'ERROR: "property" not found on "myVariable"'
+'ERROR: "doSomething" not found on "myVariable"'
 ```
 So how do we wait for myVariable to resovle? One way is that Promises allow us to chain special functions - `then` and `catch` - to it that execute either on resolve (success) or on reject (failure):
 
@@ -40,7 +40,7 @@ So how do we wait for myVariable to resovle? One way is that Promises allow us t
 // We no longer assign a Promise to myVariable. Instead we wait for the Promise to resolve using 'then'
 getValueAsyncPromise().then(function(myVariable) {
     // the Promise resolved successfully, yay!
-    myVariable.property = 2;
+    myVariable.doSomething();
 }).catch(function(error) {
     // the Promise failed to return a value, print the error
     Diagnostics.log(error.stack);
@@ -58,7 +58,7 @@ Spark also recently gave us a new option, which is to use the **async/await** ke
 // define our asynchronous function
 var myAsyncFunction = async function() {
     var myVariable = await getValueAsyncPromise();
-    myVariable.property = 2;
+    myVariable.doSomething();
 }
 // call function so it actually runs
 myAsyncFunction();
