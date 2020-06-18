@@ -47,7 +47,7 @@ getValueAsyncPromise().then(function(myVariable) {
 });
 
 // We can also do other stuff out here that doesn't depend on myVariable
-Diagnostics.log('hi, hope you're having fun');
+Diagnostics.log(`hi, hope you're having fun`);
 ```
 
 The `then` function only runs if the operation `getValueAsyncPromise` succeeds, and if not, the `catch` function runs to let us know what went wrong.
